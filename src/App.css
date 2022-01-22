@@ -400,7 +400,8 @@ footer .credit span span span {
    */
 
 .badge {
-  padding-top: 7px;
+  margin-top: 11px;
+  float: right;
 }
 
 .imagen-carrito {
@@ -411,6 +412,7 @@ footer .credit span span span {
 .sumar-producto {
   font-size: 14px;
 }
+
 .cantidad-producto {
   font-size: 16px;
 }
