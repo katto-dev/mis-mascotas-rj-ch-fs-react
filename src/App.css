@@ -217,6 +217,7 @@ footer .credit span span span {
    */
 
 #main-content {
+  text-align: center;
   background: white;
   width: 90%;
   max-width: 1200px;
@@ -341,6 +342,8 @@ footer .credit span span span {
    * ============================================================
    */
 .btn {
+  font-weight: bold;
+  margin-left: 10px;
   margin-right: 10px;
 }
 
@@ -401,6 +404,7 @@ footer .credit span span span {
 
 .badge {
   margin-top: 11px;
+  padding-top: 6px;
   float: right;
 }
 
@@ -412,6 +416,13 @@ footer .credit span span span {
 .sumar-producto {
   font-size: 14px;
 }
+
+.cantidad {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
 
 .cantidad-producto {
   font-size: 16px;

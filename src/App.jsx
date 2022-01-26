@@ -1,6 +1,7 @@
 import { Container, Row } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+
 import NavBar from './components/NavBar';
 import ItemListContainer from "./components/ItemListContainer";
 import Footer from './components/Footer';
