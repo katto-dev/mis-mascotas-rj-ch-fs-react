@@ -1,10 +1,13 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Row } from "react-bootstrap";
 
 const Footer = () => {
     return (
-        <footer id="main-footer">
+        <Row>
+            <footer id="main-footer">
             © 2022 by Katto.Dev
         </footer>
+        </Row>
     );
 }
 

@@ -402,10 +402,13 @@ footer .credit span span span {
    * ============================================================
    */
 
-.badge {
-  margin-top: 11px;
-  padding-top: 6px;
+.badge-carrito {
   float: right;
+}
+
+.badge {
+  margin-top: 2px;
+  padding-top: 6px;
 }
 
 .imagen-carrito {
@@ -422,7 +425,6 @@ footer .credit span span span {
   font-weight: bold;
   margin-right: 10px;
 }
-
 
 .cantidad-producto {
   font-size: 16px;
