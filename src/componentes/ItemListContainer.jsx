@@ -26,9 +26,8 @@ export default function ItemListContainer() {
         <Row>
             <div id="main-content">
                 <div className="div-content">
-                <h2>Catálogo de Productos</h2>
+                    <h2>Catálogo de Productos</h2>
                 </div>
-                
                 <ItemList productos={datos} />
                 <ItemCount stock={5} initial={1} onAdd={alertaCant} />
             </div>

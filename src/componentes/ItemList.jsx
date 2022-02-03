@@ -12,7 +12,7 @@ const ItemList = ({ productos }) => {
         );
     } else {
         return (
-            <h5>Cargando productos...</h5>
+            <p className="cargando">... C A R G A N D O ...</p>
         );
     };
 

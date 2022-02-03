@@ -216,9 +216,16 @@ footer .credit span span span {
    * ============================================================
    */
 
+.cargando {
+  font-size: 20px;
+  color: #f72585;
+  padding: 20px;
+}
+
 #main-content {
   text-align: center;
   background: white;
+  min-height: 350px;
   width: 90%;
   max-width: 1200px;
   margin: 20px auto;
@@ -231,7 +238,7 @@ footer .credit span span span {
 #main-content .div-carrito,
 #main-content .div-productos,
 #main-content .div-info {
-  padding: 20px;
+  padding: 20px 10px 0 10px;
 }
 
 /*
@@ -267,10 +274,10 @@ footer .credit span span span {
 }
 
 /*
-   * ============================================================
-   * PRODUCTOS
-   * ============================================================
-   */
+  * ============================================================
+  * PRODUCTOS
+  * ============================================================
+  */
 
 .cards {
   display: flex;
@@ -297,9 +304,9 @@ footer .credit span span span {
 }
 
 .cards .box img .center {
+  display: block;
   margin-left: auto;
   margin-right: auto;
-  display: block;
 }
 
 .cards .box:hover {
@@ -333,7 +340,62 @@ footer .credit span span span {
   font-size: 26px;
   font-weight: bold;
   color: black;
-  margin: 16px;
+}
+
+/*
+  * ============================================================
+  * DETALLE DEL PRODUCTO
+  * ============================================================
+  */
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  padding: 16px;
+}
+
+.flex-row .card-imagen {
+  border: 0px solid black;
+  width: 30%;
+  padding: 10px;
+}
+
+.flex-row .card-content {
+  border: 0px solid black;
+  width: 70%;
+  padding: 5px;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-col .card-titulo {
+  border: 0px solid black;
+}
+
+.flex-col .card-badge {
+  border: 0px solid black;
+}
+
+.flex-col .card-descrip {
+  text-align: justify;
+  border: 0px solid black;
+}
+
+.flex-col .card-eventos {
+  justify-items: center;
+  border: 0px solid black;
+}
+
+.flex-row .precio {
+  font-size: 26px;
+  font-weight: bold;
+  color: black;
+  line-height: 40px;
 }
 
 /*
@@ -355,9 +417,8 @@ footer .credit span span span {
   border: none;
   border-radius: 0.5rem;
   box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.5);
-  line-height: 40px;
-  margin-right: 10px;
-  padding: 0 13px;
+  line-height: 36px;
+  padding: 0 10px;
   cursor: pointer;
   transition: all 0.3s linear;
 }
