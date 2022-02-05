@@ -93,7 +93,7 @@ textarea {
 
 #main-header a {
   color: white;
-  font-weight: bold;
+  font-weight: 900;
 }
 
 /*
@@ -141,28 +141,16 @@ nav ul li {
 
 nav ul li a {
   display: block;
-  padding: 0 10px;
   text-decoration: none;
+  border-radius: 0 0 15px 15px;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin-left: 5px;
+  padding: 0 10px;
 }
 
 nav ul li a:hover {
   border-radius: 0 0 15px 15px;
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-.link-inicio {
-  border-radius: 0 0 15px 15px;
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-.link-productos {
-  border-radius: 0 0 15px 15px;
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-.link-carrito {
-  border-radius: 0 0 15px 15px;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* 

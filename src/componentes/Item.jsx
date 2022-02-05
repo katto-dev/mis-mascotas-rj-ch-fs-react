@@ -1,4 +1,8 @@
-const Item = ({ nombre, marca, img, mascota, tipoprod, peso, precio, stock }) => {
+import { Link } from 'react-router-dom';
+
+const Item = ({ id, nombre, marca, img, mascota:{nombreMascota}, peso, precio }) => {
+
+    
     return (
         <div className="box">
             <div id="producto-tienda">
@@ -9,12 +13,16 @@ const Item = ({ nombre, marca, img, mascota, tipoprod, peso, precio, stock }) =>
                 </div>
                 <div className="info">
                     <p>
-                        <span className="badge bg-primary">{mascota}</span> <span className="badge bg-success">{marca}</span> <span className="badge bg-danger">{peso}</span>
+                        <span className="badge bg-primary">{nombreMascota}</span>&nbsp; 
+                        <span className="badge bg-success">{marca}</span>&nbsp; 
+                        <span className="badge bg-danger">{peso}</span>
                     </p>
                     <p>
                         $ <span className="precio">{precio}</span>
                     </p>
-                    <a className="bton bton-celeste agregar-producto" href="#" data-id="{id}">Ver detalle</a>
+                    <Link to={`/item/${id}`}>
+                        <span className="bton bton-celeste agregar-producto" href="#" data-id="{id}">Ver detalle</span>
+                    </Link>
                 </div>
             </div>
         </div>

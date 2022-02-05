@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
 import { Row } from "react-bootstrap";
 
 import ItemCount from "./ItemCount";
@@ -15,9 +16,16 @@ export default function ItemListContainer() {
     }
 
     const [datos, setDatos] = useState([]);
+    const { idMascota } = useParams();
 
+    //console.log(idMascota);
+
+    // componentDidUpdate
     useEffect(() => {
-        customFetch(2000, productos)
+        customFetch(2000, productos.filter(producto => {
+            if (idMascota === undefined) return producto;
+            return producto.mascotaId === parseInt(idMascota)
+        }))
             .then(result => setDatos(result))
             .catch(err => console.log(err))
     }, [datos]);

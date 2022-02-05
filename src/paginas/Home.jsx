@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container } from "react-bootstrap";
 import '../App.css';
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import NavBar from '../componentes/NavBar';
 import Footer from '../componentes/Footer';
@@ -9,14 +10,15 @@ import ItemDetailContainer from '../componentes/ItemDetailContainer';
 
 function Home() {
     return (
-        <Container>
+        <BrowserRouter>
             <NavBar />
-
-            <ItemDetailContainer />
-            <ItemListContainer />
-
+            <Routes>
+                <Route path='/' element={<ItemListContainer />} />
+                <Route path='/category/:idMascota' element={<ItemListContainer />} />
+                <Route path='/item/:idProducto' element={<ItemDetailContainer />} />
+            </Routes>
             <Footer />
-        </Container>
+        </BrowserRouter>
     );
 }
 

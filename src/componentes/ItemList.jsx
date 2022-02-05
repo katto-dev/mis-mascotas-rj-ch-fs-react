@@ -6,7 +6,7 @@ const ItemList = ({ productos }) => {
         return (
             <div className="div-productos cards" id="catalogo-productos">
                 {
-                    productos.map(item => <Item key={item.id} nombre={item.nombre} marca={item.marca} img={item.img} mascota={item.mascota} tipoprod={item.tipoprod} peso={item.peso} precio={item.precio} stock={item.stock} />)
+                    productos.map(producto => <Item key={producto.id} id={producto.id} nombre={producto.nombre} marca={producto.marca} img={producto.img} mascotaId={producto.mascotaId} mascota={producto.mascota} tipoprod={producto.tipoprod} peso={producto.peso} precio={producto.precio} stock={producto.stock} />)
                 }
             </div>
         );

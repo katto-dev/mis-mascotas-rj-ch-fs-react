@@ -1,21 +1,27 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row } from "react-bootstrap";
+
+import { Link } from "react-router-dom";
+
 import CartWidget from './CartWidget';
 
 const NavBar = () => {
     return (
         <Row>
             <header id="main-header">
-                <a id="logo-header" href="">
-                    <span className="site-name">Mis Mascotas</span>
-                    <span className="site-desc">Delivery online especializado en productos para perros y gatos</span>
-                </a>
+                <Link to='/'>
+                    <span id="logo-header">
+                        <span className="site-name">Mis Mascotas</span>
+                        <span className="site-desc">Delivery online especializado en productos para perros y gatos</span>
+                    </span>
+                </Link>
                 <nav>
                     <ul>
-                        <li><a className="link-inicio" href="#">Inicio</a></li>
-                        <li><a href="#">Productos</a></li>
+                        <li><Link to="/category/1">Perros</Link></li>
+                        <li><Link to="/category/2">Gatos</Link></li>
+                        <li><Link to="/category/3">Conejos</Link></li>
                         <li id="ver-carrito">
-                            <a href="#"><CartWidget /></a>
+                            <Link to="/"><CartWidget /></Link>
                         </li>
                     </ul>
                 </nav>

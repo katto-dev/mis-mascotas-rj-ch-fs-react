@@ -1,4 +1,4 @@
-const ItemDetail = ({ producto }) => {
+const ItemDetail = ( { producto } ) => {
 
     if (producto.img) {
         return (
@@ -13,7 +13,7 @@ const ItemDetail = ({ producto }) => {
                                 </div>
                                 <div className="card-badge">
                                     <p>
-                                        <span className="badge bg-primary">{producto.mascota}</span>&nbsp; 
+                                        <span className="badge bg-primary">{producto.mascota.nombreMascota}</span>&nbsp; 
                                         <span className="badge bg-success">{producto.marca}</span>&nbsp; 
                                         <span className="badge bg-danger">{producto.peso}</span>&nbsp; 
                                         <span className="badge bg-dark">{producto.tipoprod}</span>
@@ -24,10 +24,10 @@ const ItemDetail = ({ producto }) => {
                                 </div>
                                 <div className="card-eventos">
                                     <p>
-                                        <strong>{producto.stock}</strong> unidades en stock
+                                        <strong>{producto.stock}</strong> uds en stock
                                     </p>
                                     <p>
-                                        <a className="bton bton-celeste agregar-producto" href="#" data-id="{producto}">Comprar</a>
+                                        <a className="bton bton-celeste agregar-producto" href="#" data-id="{producto.id}">Comprar</a>
                                     </p>
                                 </div>
                                 
