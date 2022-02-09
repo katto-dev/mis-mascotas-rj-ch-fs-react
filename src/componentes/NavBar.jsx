@@ -1,8 +1,5 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row } from "react-bootstrap";
-
 import { Link } from "react-router-dom";
-
 import CartWidget from './CartWidget';
 
 const NavBar = () => {
@@ -17,12 +14,16 @@ const NavBar = () => {
                 </Link>
                 <nav>
                     <ul>
+                        <li id="ver-carrito">
+                            <Link to="/cart"><CartWidget /></Link>
+                        </li>
+                    </ul>
+                </nav>
+                <nav>
+                    <ul>
                         <li><Link to="/category/1">Perros</Link></li>
                         <li><Link to="/category/2">Gatos</Link></li>
                         <li><Link to="/category/3">Conejos</Link></li>
-                        <li id="ver-carrito">
-                            <Link to="/"><CartWidget /></Link>
-                        </li>
                     </ul>
                 </nav>
             </header>

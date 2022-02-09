@@ -1,7 +1,4 @@
-// Get bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-// Get fontawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
@@ -9,8 +6,8 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 const CartWidget = () => {
     return (
         <>
-            <FontAwesomeIcon icon={faShoppingCart} size='2x' />
-            <span  id="cantidad-prods-carrito" className="badge rounded-pill bg-danger badge-carrito">
+            <FontAwesomeIcon icon={ faShoppingCart } size='2x' />
+            <span  className="badge rounded-pill bg-danger badge-carrito">
                 <span className="cantCarrito">4</span>
             </span>
         </>

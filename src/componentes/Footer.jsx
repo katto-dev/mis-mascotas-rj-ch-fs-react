@@ -5,8 +5,8 @@ const Footer = () => {
     return (
         <Row>
             <footer id="main-footer">
-            © 2022 by Katto.Dev
-        </footer>
+                <p className="credit">&copy; Copyright @ 2022 by <span>{<span>Katto.<span>Dev</span></span>}</span></p>
+            </footer>
         </Row>
     );
 }
