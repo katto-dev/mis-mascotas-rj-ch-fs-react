@@ -1,21 +1,24 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ItemCount from './ItemCount';
+import { CartContext } from '../contexto/CartContext';
 
 const ItemDetail = ( { producto } ) => {
 
     const [ itemCount, setItemCount ] = useState( 0 );
+    const carrito = useContext(CartContext);
 
     const onAdd = ( cant ) => {
         alert( "Seleccionaste " + cant + " uds del producto para agregar al carrito." );
         setItemCount( cant );
+        carrito.addToCart(producto, cant);
     }
 
     if ( producto.nombre ) {
         return (
             <>
                 <div className="div-content">
-                    <h5>DETALLE DEL PRODUCTO SELECCIONADO</h5>
+                    <h5>DETALLE DEL PRODUCTO</h5>
                 </div>
                 <div className="cards">
                     <div className="box">
@@ -28,9 +31,9 @@ const ItemDetail = ( { producto } ) => {
                                     </div>
                                     <div className="card-badge">
                                         <p>
-                                            <span className="badge bg-primary">{ producto.mascota.mascotaNombre }</span>&nbsp; 
-                                            <span className="badge bg-success">{ producto.marca }</span>&nbsp; 
-                                            <span className="badge bg-danger">{ producto.peso }</span>&nbsp; 
+                                            <span className="badge bg-dark">{ producto.mascota.mascotaNombre }</span>&nbsp; 
+                                            <span className="badge bg-dark">{ producto.marca }</span>&nbsp; 
+                                            <span className="badge bg-dark">{ producto.peso }</span>&nbsp; 
                                             <span className="badge bg-dark">{ producto.tipo }</span>
                                         </p>
                                     </div>
@@ -47,7 +50,7 @@ const ItemDetail = ( { producto } ) => {
                                                                  initial={ itemCount } 
                                                                  onAdd={ onAdd } />
                                                     : <Link to='/cart'>
-                                                          <button type="button" className="bton bton-fucsia">Checkout</button>
+                                                          <button type="button" className="btn btn-success">C H E C K O U T</button>
                                                       </Link>
                                             }
                                         </p>
@@ -68,7 +71,15 @@ const ItemDetail = ( { producto } ) => {
         );
     } else {
         return (
-            <p className="cargando">... C A R G A N D O ...</p>
+            <>
+                <div className="div-content">
+                        <h5>DETALLE DEL PRODUCTO</h5>
+                    </div>
+                <div className="spinner-border m-5" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </div>
+                {/* <p className="cargando">... C A R G A N D O ...</p> */}
+            </>
         );
     };
 }

@@ -81,10 +81,10 @@ textarea {
 }
 
 /*
-   * ============================================================
-   * CABECERA
-   * ============================================================
-   */
+  * ============================================================
+  * CABECERA
+  * ============================================================
+  */
 
 #main-header {
   background: #4cc9f0;
@@ -101,8 +101,8 @@ textarea {
 }
 
 /*
-   * HEADER - LOGO
-   */
+  * HEADER - LOGO
+  */
 #logo-header {
   float: left;
   padding: 15px 0 0 20px;
@@ -126,8 +126,8 @@ textarea {
 }
 
 /*
-   * HEADER - NAVEGACION
-   */
+  * HEADER - NAVEGACION
+  */
 nav {
   float: right;
 }
@@ -158,10 +158,10 @@ nav ul li a:hover {
 }
 
 /* 
-   * ============================================================
-   * PIE DE PAGINA
-   * ============================================================
-   */
+  * ============================================================
+  * PIE DE PAGINA
+  * ============================================================
+  */
 
 #main-footer {
   background: #194452;
@@ -203,10 +203,10 @@ footer .credit span span span {
 }
 
 /* 
-   * ============================================================
-   * CONTENIDO PRINCIPAL
-   * ============================================================
-   */
+  * ============================================================
+  * CONTENIDO PRINCIPAL
+  * ============================================================
+  */
 
 .cargando {
   font-size: 20px;
@@ -237,13 +237,14 @@ footer .credit span span span {
 #main-content .div-productos,
 #main-content .div-info {
   padding: 10px 10px 10px 10px;
+  /* border: 1px solid blue; */
 }
 
 /*
-   * ============================================================
-   * PRODUCTO DESTACADO
-   * ============================================================
-   */
+  * ============================================================
+  * PRODUCTO DESTACADO
+  * ============================================================
+  */
 
 .contenedor-destacado {
   display: flex;
@@ -283,6 +284,7 @@ footer .credit span span span {
   align-items: stretch;
   justify-content: space-between;
   background: white;
+  padding-bottom: 1rem;
 }
 
 .cards .box {
@@ -294,6 +296,7 @@ footer .credit span span span {
   box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
   transition: 0.2s linear;
   margin: .5rem;
+  margin-bottom: 1rem;
   padding: 1rem 1rem;
 }
 
@@ -308,8 +311,9 @@ footer .credit span span span {
 }
 
 .cards .box:hover {
-  background: rgba(247, 37, 133, 0.05);
-  border: 0.1rem solid #f72585;
+  /* background: rgba(247, 37, 133, 0.05); */
+  background: rgba(76, 201, 241, 0.05);
+  border: 0.1rem solid #4cc9f0;
 }
 
 /*
@@ -403,13 +407,17 @@ footer .credit span span span {
 }
 
 /*
-   * ============================================================
-   * BOTONES
-   * ============================================================
-   */
+  * ============================================================
+  * BOTONES
+  * ============================================================
+  */
 .btn {
   font-weight: bold;
-  margin-top: 5px;
+  /* margin-top: 5px; */
+}
+
+.btn-light {
+  border: 1px solid black;
 }
 
 .bton {
@@ -486,10 +494,10 @@ footer .credit span span span {
 }
 
 /*
-   * ============================================================
-   * CARRITO
-   * ============================================================
-   */
+  * ============================================================
+  * CARRITO
+  * ============================================================
+  */
 
 .badge-carrito {
   float: right;
@@ -518,10 +526,12 @@ footer .credit span span span {
 
 .cantidad-producto {
   font-size: 16px;
+  font-weight: bold;
 }
 
 .precio-carrito {
-  font-size: 16px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .precio-total {
@@ -542,10 +552,10 @@ footer .credit span span span {
 }
 
 /*
-   * ============================================================
-   * DATOS DE ENVIO, PAGO Y AGRADECIMIENTO
-   * ============================================================
-   */
+  * ============================================================
+  * DATOS DE ENVIO, PAGO Y AGRADECIMIENTO
+  * ============================================================
+  */
 
 .titulo-envio,
 .titulo-pago {
@@ -565,10 +575,10 @@ footer .credit span span span {
 }
 
 /*
-   * ============================================================
-   * MARCAS FILTRADAS
-   * ============================================================
-   */
+  * ============================================================
+  * MARCAS FILTRADAS
+  * ============================================================
+  */
 
 .marcas {
   margin-bottom: 7px;

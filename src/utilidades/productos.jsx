@@ -174,7 +174,7 @@ const productos = [
         nombre: "Adult Original Recipe",
         marca: "OLD PRINCE",
         marcall: "all",
-        imagenUrlurl: "/img/productos/old-prince-adult-original-recipe_196.png",
+        imagenUrl: "/img/productos/old-prince-adult-original-recipe_196.png",
         idMascota: 1,
         mascota: {
             mascotaNombre: "Perro",
