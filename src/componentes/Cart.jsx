@@ -5,7 +5,7 @@ import { CartContext } from "../contexto/CartContext";
 
 export default function Cart() {
     // Usamos el contexto
-    const carrito = useContext( CartContext );
+    const contextoCarrito = useContext( CartContext );
 
     return (
         <Row>
@@ -23,8 +23,8 @@ export default function Cart() {
                         </div>
                         <div className="d-flex justify-content-end col-6">
                             {
-                                carrito.cartList.length > 0
-                                ? <button type="button" className="btn btn-danger" onClick={ carrito.clearCart }>ELEMINAR LOS PRODUCTOS</button>
+                                contextoCarrito.cartList.length > 0
+                                ? <button type="button" className="btn btn-danger" onClick={ contextoCarrito.clearCart }>ELEMINAR LOS PRODUCTOS</button>
                                 : <div className="div-content"><p><strong>C A R R I T O &nbsp; &nbsp; V A C I O ! ! !</strong></p></div>
                             }
                         </div>
@@ -33,32 +33,45 @@ export default function Cart() {
                 <div className="div-content">
                     <div id="contenedor-carrito">
                         {
-                            carrito.cartList.length > 0 
-                            ? carrito.cartList.map( item => 
-                                <div className="d-flex row align-items-center" key={ item.itemId }>
+                            contextoCarrito.cartList.length > 0 
+                            && contextoCarrito.cartList.map( item => 
+                                <div className="d-flex row align-items-center carrito-item rounded" key={ item.itemId }>
                                     
                                     <div className="d-flex justify-content-center col-2">
                                         <img src={ item.itemImagen } alt="" className="imagen-carrito" width="50" />
                                     </div>
-                                    <div className="d-flex justify-content-center col-4">
+                                    <div className="d-flex justify-content-center col-5">
                                         <h5>{ item.itemNombre }</h5>
                                     </div>
                                     <div className="d-flex justify-content-center col-2">
                                         <p>
-                                            <span className="cantidad-producto">{ item.itemCant }</span> uds
+                                            <span className="cantidad-producto">{ item.itemCant }</span> uds<br /> $ <span className="cantidad-producto">{ item.itemPrecio }</span> c/u
                                         </p>
                                     </div>
-                                    <div className="d-flex justify-content-center col-2">
-                                        <p>$ <span className="precio-carrito">{ item.itemPrecio }</span></p>
+                                    <div className="d-flex justify-content-end col-2">
+                                        <p></p>
+                                        <p>$ <span className="precio-carrito">{ contextoCarrito.calcTotalItem( item.itemId ) }</span></p>
                                     </div>
-                                    <div className="d-flex justify-content-center col-2">
-                                        <button type="button" className="btn btn-dark borrar-producto" onClick={ () => carrito.removeItem( item.itemId ) }>ELIMINAR</button>
+                                    <div className="d-flex justify-content-start col-1">
+                                    <button type="button" className="btn btn-danger borrar-producto" onClick={ () => contextoCarrito.removeItem( item.itemId ) }>X</button>
                                     </div>
-                                </div>
+                                </div> 
                             )
-                            : <span></span>
                         }
-                        
+                        {
+                            contextoCarrito.cartList.length > 0 
+                            && <div className="d-flex row align-items-center carrito-total rounded">
+                                    <div className="d-flex justify-content-center col-2"></div>
+                                    <div className="d-flex justify-content-center col-5"></div>
+                                    <div className="d-flex justify-content-center col-2">
+                                        <p><span className="precio-carrito">TOTAL</span></p>
+                                    </div>
+                                    <div className="d-flex justify-content-end col-2">
+                                    <p>$ <span className="precio-carrito">{ contextoCarrito.calcTotalCart() }</span></p>
+                                    </div>
+                                    <div className="d-flex justify-content-start col-1"></div>
+                                </div>
+                        }
                     </div>
 
                     <div id="pago-carrito"></div>

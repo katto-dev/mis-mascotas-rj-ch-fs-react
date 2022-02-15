@@ -20,7 +20,9 @@ export default function ItemListContainer() {
         } ) )
             .then( result => setDatos( result ) ) // Cuando la promesa se cumple carga el array en "datos"
             .catch( err => console.log( err ) )
-    }, [ datos ] ); // componentDidUpdate
+    // Error de renderizado cada x tiempo
+    // Fix: hacemos que el render dependa del "idMascota" en vez de "datos"
+    }, [ idMascota ] ); // componentDidUpdate
 
     return (
         <Row>

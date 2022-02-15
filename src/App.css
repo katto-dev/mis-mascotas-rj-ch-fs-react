@@ -148,7 +148,7 @@ nav ul li a {
   text-decoration: none;
   border-radius: 0 0 15px 15px;
   background-color: rgba(0, 0, 0, 0.2);
-  margin-left: 5px;
+  margin: 0 2px;
   padding: 0 10px;
 }
 
@@ -499,6 +499,10 @@ footer .credit span span span {
   * ============================================================
   */
 
+#contenedor-carrito {
+  margin-bottom: 30px;
+}
+
 .badge-carrito {
   float: right;
 }
@@ -509,7 +513,7 @@ footer .credit span span span {
 }
 
 .imagen-carrito {
-  margin: 10px 0;
+  margin: 5px 0;
 }
 
 .restar-producto,
@@ -518,10 +522,9 @@ footer .credit span span span {
 }
 
 .cantidad {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: bold;
   color: black !important; 
-  padding-bottom: 5px;
 }
 
 .cantidad-producto {
@@ -550,6 +553,22 @@ footer .credit span span span {
   max-width: 200px;
   margin: 20px;
 }
+
+.carrito-item {
+  background: #fafafa;
+  margin-bottom: 10px;
+  border: 1px solid #b1b1b1;
+  padding: 5px;
+}
+
+.carrito-total {
+  color: #194452;
+  background: #4cc9f0;
+  margin-bottom: 10px;
+  border: 1px solid #194452;
+  padding: 5px;
+}
+
 
 /*
   * ============================================================

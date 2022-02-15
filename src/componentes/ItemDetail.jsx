@@ -50,7 +50,7 @@ const ItemDetail = ( { producto } ) => {
                                                                  initial={ itemCount } 
                                                                  onAdd={ onAdd } />
                                                     : <Link to='/cart'>
-                                                          <button type="button" className="btn btn-success">C H E C K O U T</button>
+                                                          <button type="button" className="btn btn-primary">TERMINAR MI COMPRA</button>
                                                       </Link>
                                             }
                                         </p>

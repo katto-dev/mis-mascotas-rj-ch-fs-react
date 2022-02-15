@@ -11,7 +11,7 @@ const CartContextProvider = ( { children } ) => {
     const addToCart = ( producto, cant ) => {
         // Verificamos si el producto existe en el carrito
         let isInCart = cartList.find( 
-            item => item.idItem === producto.id 
+            item => item.itemId === producto.id 
         );
         
         if ( isInCart === undefined ) {
@@ -26,7 +26,7 @@ const CartContextProvider = ( { children } ) => {
                 }
             ] );
         } else {
-            isInCart.cantItem += cant;
+            isInCart.itemCant += cant;
 
             setCartList( [
                 ...cartList
@@ -35,6 +35,7 @@ const CartContextProvider = ( { children } ) => {
     }
 
     const clearCart = () => {
+        
         setCartList( [] );
     }
 
@@ -42,12 +43,41 @@ const CartContextProvider = ( { children } ) => {
         let filtro = cartList.filter( 
             item => item.itemId != id 
         );
+        
         setCartList( filtro );
+    }
+
+    const calcTotalItem = ( itemId ) => {
+        let idx = cartList.map(
+            item => item.itemId
+        ).indexOf( itemId );
+        // Calculamos el total por producto
+        return cartList[idx].itemPrecio * cartList[idx].itemCant;
+    }
+
+    const calcTotalCart = () => {
+        let valor = 0;
+        let totalItems = cartList.map(
+            item => calcTotalItem( item.itemId )
+        );
+        // Recorremos el arreglo "totalItems" con el "for of"
+        for( let item of totalItems ) valor += item;
+        return valor;
+    }
+
+    const calcBadgeQty = () => {
+        let valor = 0;
+        let qtysItems = cartList.map(
+            item => item.itemCant
+        );
+        // Recorremos el arreglo "qtysItems" con el "for each"
+        qtysItems.forEach( (item) => { valor += item } );
+        return valor;
     }
 
     return (
         // Agregamos los estados locales para hacerlos globales (enviar como objetos, entre "{}")
-        <CartContext.Provider value={ { cartList, addToCart, clearCart, removeItem } }>
+        <CartContext.Provider value={ { cartList, addToCart, clearCart, removeItem, calcTotalItem, calcTotalCart, calcBadgeQty } }>
             {/* Configuramos los hijos */}
             { children }
         </CartContext.Provider>
