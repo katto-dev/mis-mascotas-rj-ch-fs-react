@@ -21,9 +21,9 @@ const NavBar = () => {
                 </nav>
                 <nav>
                     <ul>
-                        <li><Link to="/category/1">Perros</Link></li>
-                        <li><Link to="/category/2">Gatos</Link></li>
-                        <li><Link to="/category/3">Conejos</Link></li>
+                        <li><Link to="/category/KfPcH5jy5Av6dmxdXfGT">Perros</Link></li>
+                        <li><Link to="/category/ATVYONAxa3gjlp5TYZOn">Gatos</Link></li>
+                        <li><Link to="/category/g5mw3cP9t8IVCUaBlgJK">Conejos</Link></li>
                     </ul>
                 </nav>
             </header>

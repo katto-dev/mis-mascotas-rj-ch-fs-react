@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ItemCount from './ItemCount';
-import { CartContext } from '../contexto/CartContext';
+import { CartContext } from '../contextos/CartContext';
 
 const ItemDetail = ( { producto } ) => {
 
@@ -11,7 +11,7 @@ const ItemDetail = ( { producto } ) => {
     const onAdd = ( cant ) => {
         alert( "Seleccionaste " + cant + " uds del producto para agregar al carrito." );
         setItemCount( cant );
-        carrito.addToCart(producto, cant);
+        carrito.addToCart( producto, cant );
     }
 
     if ( producto.nombre ) {
@@ -31,10 +31,20 @@ const ItemDetail = ( { producto } ) => {
                                     </div>
                                     <div className="card-badge">
                                         <p>
-                                            <span className="badge bg-dark">{ producto.mascota.mascotaNombre }</span>&nbsp; 
-                                            <span className="badge bg-dark">{ producto.marca }</span>&nbsp; 
-                                            <span className="badge bg-dark">{ producto.peso }</span>&nbsp; 
-                                            <span className="badge bg-dark">{ producto.tipo }</span>
+                                            <span className="badge bg-dark">
+                                               { 
+                                                    producto.idMascota === 'KfPcH5jy5Av6dmxdXfGT'
+                                                    ? 'Perro'
+                                                    : ( producto.idMascota === 'ATVYONAxa3gjlp5TYZOn' 
+                                                        ? 'Gato'
+                                                        : ( producto.idMascota === 'g5mw3cP9t8IVCUaBlgJK'
+                                                            ? 'Conejo'
+                                                            : 'S/D') )
+                                                }
+                                            </span>&nbsp; 
+                                            <span className="badge bg-danger">{ producto.marca }</span>&nbsp; 
+                                            <span className="badge bg-success">{ producto.peso }</span>&nbsp; 
+                                            <span className="badge bg-warning text-dark">{ producto.tipo }</span>
                                         </p>
                                     </div>
                                     <div className="card-descrip">
@@ -50,7 +60,7 @@ const ItemDetail = ( { producto } ) => {
                                                                  initial={ itemCount } 
                                                                  onAdd={ onAdd } />
                                                     : <Link to='/cart'>
-                                                          <button type="button" className="btn btn-primary">TERMINAR MI COMPRA</button>
+                                                          <button type="button" className="btn btn-info text-dark">TERMINAR MI COMPRA</button>
                                                       </Link>
                                             }
                                         </p>

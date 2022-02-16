@@ -2,7 +2,7 @@ import { useContext } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-import { CartContext } from "../contexto/CartContext";
+import { CartContext } from "../contextos/CartContext";
 
 const CartWidget = () => {
 

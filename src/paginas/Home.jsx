@@ -4,7 +4,7 @@ import Footer from '../componentes/Footer';
 import ItemListContainer from "../componentes/ItemListContainer";
 import ItemDetailContainer from '../componentes/ItemDetailContainer';
 import Cart from "../componentes/Cart";
-import CartContextProvider from "../contexto/CartContext";
+import CartContextProvider from "../contextos/CartContext";
 
 function Home() {
     return (

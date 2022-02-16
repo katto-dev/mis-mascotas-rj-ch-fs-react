@@ -556,15 +556,15 @@ footer .credit span span span {
 
 .carrito-item {
   background: #fafafa;
-  margin-bottom: 10px;
+  margin: 0 5px 10px;
   border: 1px solid #b1b1b1;
   padding: 5px;
 }
 
 .carrito-total {
-  color: #194452;
+  color: black;
   background: #4cc9f0;
-  margin-bottom: 10px;
+  margin: 0 5px 10px;;
   border: 1px solid #194452;
   padding: 5px;
 }

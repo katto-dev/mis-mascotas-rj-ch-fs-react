@@ -3,7 +3,6 @@ const productos = [
         id: 1,
         nombre: "Adult Complete Razas Medianas",
         marca: "PRO PLAN",
-        marcaAll: "all",
         imagenUrl: "/img/productos/pro-plan-adult-complete-razas-medianas_143.png",
         idMascota: 1,
         mascota: {
@@ -20,7 +19,6 @@ const productos = [
         id: 2,
         nombre: "Gatos Castrados Weight Control",
         marca: "ROYAL CANIN",
-        marcaAll: "all",
         imagenUrl: "/img/productos/royal-canin-gatos-castrados-weight-control_variacion_199.png",
         idMascota: 2,
         mascota: {
@@ -37,7 +35,6 @@ const productos = [
         id: 3,
         nombre: "Alimento Balanceado para Conejos",
         marca: "NELSONI RANCH",
-        marcall: "all",
         imagenUrl: "/img/productos/nelsoni-ranch-alimento-balanceado-para-conejos_236.png",
         idMascota: 3,
         mascota: {
@@ -54,7 +51,6 @@ const productos = [
         id: 4,
         nombre: "Gastro Intestinal Cat",
         marca: "ROYAL CANIN",
-        marcall: "all",
         imagenUrl: "/img/productos/royal-canin-gastro-intestinal-cat_variacion_206.png",
         idMascota: 2,
         mascota: {
@@ -71,7 +67,6 @@ const productos = [
         id: 5,
         nombre: "Reduced Calorie Cat",
         marca: "PRO PLAN",
-        marcall: "all",
         imagenUrl: "/img/productos/pro-plan-reduced-calorie-cat_150.png",
         idMascota: 2,
         mascota: {
@@ -88,7 +83,6 @@ const productos = [
         id: 6,
         nombre: "Cat Adult Complete Care",
         marca: "OLD PRINCE",
-        marcall: "all",
         imagenUrl: "/img/productos/old-prince-cat-adult-complete-care_197.png",
         idMascota: 2,
         mascota: {
@@ -105,7 +99,6 @@ const productos = [
         id: 7,
         nombre: "Puppy Complete Razas Medianas",
         marca: "PRO PLAN",
-        marcall: "all",
         imagenUrl: "/img/productos/pro-plan-puppy-complete-razas-medianas_137.png",
         idMascota: 1,
         mascota: {
@@ -122,7 +115,6 @@ const productos = [
         id: 8,
         nombre: "Alimento Conejos Mezcla Especial",
         marca: "UNION PET",
-        marcall: "all",
         imagenUrl: "/img/productos/union-pet-alimento-conejos-mezcla-especial_200.png",
         idMascota: 3,
         mascota: {
@@ -139,7 +131,6 @@ const productos = [
         id: 9,
         nombre: "Balanced Exclusive Recipe Cerdo y Arroz",
         marca: "VITAL CAN",
-        marcall: "all",
         imagenUrl: "/img/productos/vital-can-balanced-exclusive-recipe-cerdo-y-arroz_427.png",
         idMascota: 1,
         mascota: {
@@ -156,7 +147,6 @@ const productos = [
         id: 10,
         nombre: "Adult Small Breed CH&R",
         marca: "PURINA EXCELLENT",
-        marcall: "all",
         imagenUrl: "/img/productos/purina-excellent-adult-small-breed-chyr_158.png",
         idMascota: 1,
         mascota: {
@@ -173,7 +163,6 @@ const productos = [
         id: 11,
         nombre: "Adult Original Recipe",
         marca: "OLD PRINCE",
-        marcall: "all",
         imagenUrl: "/img/productos/old-prince-adult-original-recipe_196.png",
         idMascota: 1,
         mascota: {
