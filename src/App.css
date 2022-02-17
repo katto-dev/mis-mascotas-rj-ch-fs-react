@@ -399,6 +399,11 @@ footer .credit span span span {
   font-weight: bold;
 }
 
+.stock {
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .flex-row .precio {
   font-size: 26px;
   font-weight: bold;
@@ -500,7 +505,7 @@ footer .credit span span span {
   */
 
 #contenedor-carrito {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .badge-carrito {
@@ -563,12 +568,15 @@ footer .credit span span span {
 
 .carrito-total {
   color: black;
-  background: #4cc9f0;
-  margin: 0 5px 10px;;
+  background: #c9f1fd;
+  margin: 0 5px 10px;
   border: 1px solid #194452;
   padding: 5px;
 }
 
+#comprar-boton-carrito {
+  margin-bottom: 20px;
+}
 
 /*
   * ============================================================

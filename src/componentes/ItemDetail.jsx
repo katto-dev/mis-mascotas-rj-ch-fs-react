@@ -9,7 +9,7 @@ const ItemDetail = ( { producto } ) => {
     const carrito = useContext(CartContext);
 
     const onAdd = ( cant ) => {
-        alert( "Seleccionaste " + cant + " uds del producto para agregar al carrito." );
+        alert( "Usted ha seleccionado " + cant + " unid. para agregar al carrito." );
         setItemCount( cant );
         carrito.addToCart( producto, cant );
     }
@@ -31,19 +31,18 @@ const ItemDetail = ( { producto } ) => {
                                     </div>
                                     <div className="card-badge">
                                         <p>
-                                            <span className="badge bg-dark">
-                                               { 
-                                                    producto.idMascota === 'KfPcH5jy5Av6dmxdXfGT'
-                                                    ? 'Perro'
-                                                    : ( producto.idMascota === 'ATVYONAxa3gjlp5TYZOn' 
-                                                        ? 'Gato'
-                                                        : ( producto.idMascota === 'g5mw3cP9t8IVCUaBlgJK'
-                                                            ? 'Conejo'
-                                                            : 'S/D') )
-                                                }
-                                            </span>&nbsp; 
-                                            <span className="badge bg-danger">{ producto.marca }</span>&nbsp; 
-                                            <span className="badge bg-success">{ producto.peso }</span>&nbsp; 
+                                            { 
+                                                producto.idMascota === 'KfPcH5jy5Av6dmxdXfGT'
+                                                ? <span className="badge bg-primary">Perro</span>
+                                                : ( producto.idMascota === 'ATVYONAxa3gjlp5TYZOn' 
+                                                    ? <span className="badge bg-success">Gato</span>
+                                                    : ( producto.idMascota === 'g5mw3cP9t8IVCUaBlgJK'
+                                                        ? <span className="badge bg-danger">Conejo</span>
+                                                        : <span className="badge bg-secondary">********</span> ) )
+                                            }
+                                            &nbsp; 
+                                            <span className="badge bg-dark">{ producto.marca }</span>&nbsp; 
+                                            <span className="badge bg-info text-dark">{ producto.peso }</span>&nbsp; 
                                             <span className="badge bg-warning text-dark">{ producto.tipo }</span>
                                         </p>
                                     </div>
@@ -51,7 +50,9 @@ const ItemDetail = ( { producto } ) => {
                                         <p>{ producto.descripcion }</p>
                                     </div>
                                     <div className="card-eventos">
-                                        <p><span className="stock">{ producto.stock }</span> uds en stock</p>
+                                        <p>
+                                            Stock: <span className="stock">{ producto.stock }</span> unid.
+                                        </p>
                                         <p>
                                             {
                                                 // Intercambiabilidad (itemCount)
@@ -60,7 +61,7 @@ const ItemDetail = ( { producto } ) => {
                                                                  initial={ itemCount } 
                                                                  onAdd={ onAdd } />
                                                     : <Link to='/cart'>
-                                                          <button type="button" className="btn btn-info text-dark">TERMINAR MI COMPRA</button>
+                                                          <button type="button" className="btn btn-info text-dark">CHEQUEAR COMPRA</button>
                                                       </Link>
                                             }
                                         </p>
@@ -71,7 +72,7 @@ const ItemDetail = ( { producto } ) => {
                             <div className="card-imagen">
                                 <img src={ producto.imagenUrl } alt={ producto.nombre } className="imagen-producto center" />
                                 <p>
-                                    $ <span className="precio">{ producto.precio }</span>
+                                    Precio: $ <span className="precio">{ producto.precio }</span>
                                 </p>
                             </div>
                         </div>

@@ -2,10 +2,49 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Row } from "react-bootstrap";
 import { CartContext } from "../contextos/CartContext";
+import { serverTimestamp } from "firebase/firestore";
+import { createOrderInFirestore } from "../utilidades/firestoreFetch";
+import { doc, updateDoc, increment } from "firebase/firestore";
+import db from "../utilidades/firebaseConfig";
+
 
 export default function Cart() {
     // Usamos el contexto
     const carrito = useContext( CartContext );
+
+    const createOrder = () => {
+        let order = {
+            buyer: {
+                name: 'Diego de la Vega',
+                phone: '+54 91130001000',
+                email: 'diegodelavega@elzorro.com'
+            },
+            //items: carrito.cartList,
+            items: carrito.cartList.map( item => ( {
+                id: item.itemId,
+                price: item.itemPrecio,
+                title: item.itemNombre,
+                qty: item.itemCant
+            } ) ),
+            total: carrito.calcTotalCart(),
+            date: serverTimestamp()
+        }
+        // console.log( order );
+
+        createOrderInFirestore( order )
+            .then( result => alert( 'Tu orden ha sido creada con éxito. \n\nOrden ID: ' + result.id + '\n' ) )
+            .catch( error => console.log( error ) );
+
+        carrito.cartList.forEach( async ( item ) => {
+            const itemRef = doc( db, "productos", item.itemId );
+
+            await updateDoc( itemRef, {
+                stock: increment( -item.itemCant )
+            } );
+        } )
+
+        carrito.clearCart();
+    }
 
     return (
         <Row>
@@ -25,7 +64,7 @@ export default function Cart() {
                             {
                                 carrito.cartList.length > 0
                                 ? <button type="button" className="btn btn-danger" onClick={ carrito.clearCart }>ELEMINAR LOS PRODUCTOS</button>
-                                : <div className="div-content"><p><strong>C A R R I T O &nbsp; &nbsp; V A C I O ! ! !</strong></p></div>
+                                : <div className="div-content"><p><strong>¡ C A R R I T O &nbsp; V A C I O !</strong></p></div>
                             }
                         </div>
                     </div>
@@ -73,10 +112,18 @@ export default function Cart() {
                                 </div>
                         }
                     </div>
-
-                    <div id="pago-carrito"></div>
-                    <div id="comprar-boton-carrito"></div>
-                    <div id="vaciar-boton-carrito"></div>
+                    <div id="comprar-boton-carrito">
+                        <div className="d-flex row align-items-center">
+                            <div className="d-flex justify-content-left col-3"></div>
+                            <div className="d-flex justify-content-center col-6">
+                                {
+                                    carrito.cartList.length > 0
+                                    && <button type="button" className="btn btn-success" onClick={ createOrder }>REALIZAR COMPRA</button>
+                                }
+                            </div>
+                            <div className="d-flex justify-content-end col-3"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </Row>

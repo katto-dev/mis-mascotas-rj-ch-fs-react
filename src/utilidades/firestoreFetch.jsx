@@ -1,5 +1,5 @@
 import { query, where, orderBy, collection, getDocs } from '@firebase/firestore';
-import { doc, getDoc } from "firebase/firestore";
+import { doc, getDoc, setDoc } from "firebase/firestore";
 import db from '../utilidades/firebaseConfig';
 
 const productosRef = collection( db, "productos" );
@@ -22,7 +22,7 @@ export const firestoreFetchAll = async ( idMascota ) => {
         ...item.data()
     } ) );
     return dataFromFirebase;
-    //console.log(dataFromFirebase);
+    //return console.log(dataFromFirebase);
 }
 
 export const firestoreFetchOne = async ( idProducto ) => {
@@ -37,4 +37,12 @@ export const firestoreFetchOne = async ( idProducto ) => {
     } else {
       console.log("No such document!");
     }
+}
+
+export const createOrderInFirestore = async ( order ) => {
+    // Add a new document with a generated id
+    const newOrderRef = doc(collection(db, "orders"));
+    // later...
+    await setDoc(newOrderRef, order);
+    return newOrderRef;
 }
