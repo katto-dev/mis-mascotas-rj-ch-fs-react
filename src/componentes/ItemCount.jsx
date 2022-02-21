@@ -24,7 +24,9 @@ const ItemCount = ( { stock = 0, initial = 1, onAdd } ) => {
         <>
             <div className="number-input">
                 <button className="qty-minus" onClick={ disminuir }>-</button>
-                <input className="quantity" name="quantity" type="number" value={ count }/>
+                <input className="quantity" name="quantity" type="number" 
+                    value={ count } 
+                    onChange={(event)=>this.inputChangedHandler(event)} />
                 <button className="qty-plus" onClick={ aumentar }>+</button>
             </div>
             &nbsp; &nbsp; 

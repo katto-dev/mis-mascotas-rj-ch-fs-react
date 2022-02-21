@@ -42,7 +42,6 @@ const ItemDetail = ( { producto } ) => {
                                                         : <span className="badge bg-secondary">********</span> ) )
                                             }
                                             &nbsp; 
-                                            
                                             <span className="badge bg-info text-dark">{ producto.peso }</span>&nbsp; 
                                             <span className="badge bg-warning text-dark">{ producto.tipo }</span>
                                         </p>
@@ -54,7 +53,7 @@ const ItemDetail = ( { producto } ) => {
                                         <p>
                                             Stock: <span className="stock">{ producto.stock }</span> u.
                                         </p>
-                                        <p>
+                                        <div>
                                             {
                                                 // Intercambiabilidad (itemCount)
                                                 itemCount === 0
@@ -65,7 +64,7 @@ const ItemDetail = ( { producto } ) => {
                                                           <button type="button" className="btn btn-info text-dark">VERIFICAR CARRITO</button>
                                                       </Link>
                                             }
-                                        </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -84,8 +83,8 @@ const ItemDetail = ( { producto } ) => {
         return (
             <>
                 <div className="div-content">
-                        <h5>DETALLE DEL PRODUCTO</h5>
-                    </div>
+                    <h5>DETALLE DEL PRODUCTO</h5>
+                </div>
                 <div className="spinner-border m-5" role="status">
                     <span className="visually-hidden">Loading...</span>
                 </div>

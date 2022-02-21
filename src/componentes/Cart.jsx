@@ -50,7 +50,7 @@ export default function Cart() {
                 <div className="div-content">
                     <h5>MI CARRITO</h5>
                 </div>
-                <div className="div-content">
+                <div className="div-carrito">
                     <div className="d-flex row align-items-center">
                                         
                         <div className="d-flex justify-content-left col-6">
