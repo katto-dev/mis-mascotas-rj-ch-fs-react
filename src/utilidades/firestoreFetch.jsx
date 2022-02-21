@@ -22,7 +22,6 @@ export const firestoreFetchAll = async ( idMascota ) => {
         ...item.data()
     } ) );
     return dataFromFirebase;
-    //return console.log(dataFromFirebase);
 }
 
 export const firestoreFetchOne = async ( idProducto ) => {
@@ -35,7 +34,7 @@ export const firestoreFetchOne = async ( idProducto ) => {
           ...documentSnap.data()
       }
     } else {
-      console.log("No such document!");
+      console.log("Documento no encontrado!");
     }
 }
 

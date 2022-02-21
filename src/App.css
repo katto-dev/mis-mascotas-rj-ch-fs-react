@@ -154,7 +154,8 @@ nav ul li a {
 
 nav ul li a:hover {
   border-radius: 0 0 15px 15px;
-  background-color: rgba(0, 0, 0, 0.8);
+  //background-color: rgba(0, 0, 0, 0.8);
+  background-color: #f72585;
 }
 
 /* 
@@ -236,7 +237,7 @@ footer .credit span span span {
 #main-content .div-carrito,
 #main-content .div-productos,
 #main-content .div-info {
-  padding: 10px 10px 10px 10px;
+  padding: 30px 10px 10px 10px;
   /* border: 1px solid blue; */
 }
 
@@ -292,7 +293,7 @@ footer .credit span span span {
   text-align: center;
   background: white;
   border: 0.1rem solid rgba(0, 0, 0, 0.2);
-  border-radius: 0.5rem;
+  border-radius: 0.3rem;
   box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
   transition: 0.2s linear;
   margin: .5rem;
@@ -311,9 +312,40 @@ footer .credit span span span {
 }
 
 .cards .box:hover {
-  /* background: rgba(247, 37, 133, 0.05); */
-  background: rgba(76, 201, 241, 0.05);
-  border: 0.1rem solid #4cc9f0;
+  background: rgba(247, 37, 133, 0.05);
+  /* background: rgba(76, 201, 241, 0.05); */
+  border: 0.1rem solid #f72585;
+}
+
+.cards .box-det {
+  flex: 1 1 20rem;
+  text-align: center;
+  background: white;
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+  transition: 0.2s linear;
+  margin: .5rem;
+  margin-bottom: 1rem;
+  padding: 1rem 1rem;
+}
+
+.cards .box-det img {
+  height: 10rem;
+}
+
+.cards .box-det img .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.imagen-producto {
+  margin-bottom: 10px;  
+}
+
+.imagen-producto-detalle {
+  margin-bottom: 0px;  
 }
 
 /*
@@ -395,12 +427,12 @@ footer .credit span span span {
 }
 
 .flex-col .stock {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
 }
 
 .stock {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
 }
 
@@ -409,6 +441,53 @@ footer .credit span span span {
   font-weight: bold;
   color: black;
   line-height: 60px;
+}
+
+/* Aumentar y disminuir cantidad de productos */
+input[type="number"] {
+  appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.number-input {
+  display: inline-flex;
+  border: 2px solid #ddd;
+}
+
+.number-input button {
+  position: relative;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  margin: 0;
+}
+
+.number-input input[type=number] {
+  font-size: 1rem;
+  font-weight: bold;
+  border: solid #ddd;
+  border-width: 0 2px;
+  height: 2rem;
+  text-align: center;
+  max-width: 3rem;
+  padding: .3rem;
+}
+
+.qty-minus:hover {
+  color: white;
+  background-color: red;
+}
+
+.qty-plus:hover {
+  color: white;
+  background-color: green;
 }
 
 /*
@@ -549,8 +628,9 @@ footer .credit span span span {
 }
 
 .carrito-vacio-texto {
-  font-size: 26px;
+  font-size: 18px;
   font-weight: bold;
+  color: #f72585;
   margin: 40px;
 }
 

@@ -10,7 +10,7 @@ const ItemList = ( { productos } ) => {
                 <div className="div-content">
                     <h5>CATÁLOGO DE PRODUCTOS</h5>
                 </div>
-                <div className="div-productos cards">
+                <div className="div-catalogo cards">
                     { productos.map( 
                         producto => <Item key={ producto.id } 
                                           id={ producto.id } 
@@ -36,7 +36,6 @@ const ItemList = ( { productos } ) => {
                 <div className="spinner-border m-5" role="status">
                     <span className="visually-hidden">Loading...</span>
                 </div>
-                {/* <p className="cargando">... C A R G A N D O ...</p> */}
             </>
         );
     };

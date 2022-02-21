@@ -9,7 +9,7 @@ const ItemDetail = ( { producto } ) => {
     const carrito = useContext(CartContext);
 
     const onAdd = ( cant ) => {
-        alert( "Usted ha seleccionado " + cant + " unid. para agregar al carrito." );
+        alert( "Has seleccionado " + cant + " unid. para agregar al carrito!" );
         setItemCount( cant );
         carrito.addToCart( producto, cant );
     }
@@ -21,16 +21,17 @@ const ItemDetail = ( { producto } ) => {
                     <h5>DETALLE DEL PRODUCTO</h5>
                 </div>
                 <div className="cards">
-                    <div className="box">
+                    <div className="box-det">
                         <div className="flex-row">
                             
                             <div className="card-content">
                                 <div className="flex-col">
                                     <div className="card-titulo">
-                                        <h3 className="nombre">{ producto.nombre }</h3>
+                                        <h4 className="nombre">{ producto.nombre }</h4>
                                     </div>
                                     <div className="card-badge">
                                         <p>
+                                            <span className="badge bg-dark">{ producto.marca }</span>&nbsp; 
                                             { 
                                                 producto.idMascota === 'KfPcH5jy5Av6dmxdXfGT'
                                                 ? <span className="badge bg-primary">Perro</span>
@@ -41,7 +42,7 @@ const ItemDetail = ( { producto } ) => {
                                                         : <span className="badge bg-secondary">********</span> ) )
                                             }
                                             &nbsp; 
-                                            <span className="badge bg-dark">{ producto.marca }</span>&nbsp; 
+                                            
                                             <span className="badge bg-info text-dark">{ producto.peso }</span>&nbsp; 
                                             <span className="badge bg-warning text-dark">{ producto.tipo }</span>
                                         </p>
@@ -51,7 +52,7 @@ const ItemDetail = ( { producto } ) => {
                                     </div>
                                     <div className="card-eventos">
                                         <p>
-                                            Stock: <span className="stock">{ producto.stock }</span> unid.
+                                            Stock: <span className="stock">{ producto.stock }</span> u.
                                         </p>
                                         <p>
                                             {
@@ -61,18 +62,17 @@ const ItemDetail = ( { producto } ) => {
                                                                  initial={ itemCount } 
                                                                  onAdd={ onAdd } />
                                                     : <Link to='/cart'>
-                                                          <button type="button" className="btn btn-info text-dark">CHEQUEAR COMPRA</button>
+                                                          <button type="button" className="btn btn-info text-dark">VERIFICAR CARRITO</button>
                                                       </Link>
                                             }
                                         </p>
                                     </div>
-                                    
                                 </div>
                             </div>
                             <div className="card-imagen">
-                                <img src={ producto.imagenUrl } alt={ producto.nombre } className="imagen-producto center" />
+                                <img src={ producto.imagenUrl } alt={ producto.nombre } className="imagen-producto-detalle center" />
                                 <p>
-                                    Precio: $ <span className="precio">{ producto.precio }</span>
+                                    $ <span className="precio">{ producto.precio }</span>
                                 </p>
                             </div>
                         </div>
@@ -89,7 +89,6 @@ const ItemDetail = ( { producto } ) => {
                 <div className="spinner-border m-5" role="status">
                     <span className="visually-hidden">Loading...</span>
                 </div>
-                {/* <p className="cargando">... C A R G A N D O ...</p> */}
             </>
         );
     };

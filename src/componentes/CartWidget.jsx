@@ -13,13 +13,12 @@ const CartWidget = () => {
             <FontAwesomeIcon icon={ faShoppingCart } size='2x' />
             { 
                 contextoCarrito.calcBadgeQty() > 0
-                && <span className="badge rounded-pill bg-danger badge-carrito">
+                && <span className="badge rounded-pill bg-dark badge-carrito">
                     <span className="cantCarrito">{ contextoCarrito.calcBadgeQty() }</span>
                 </span>
             }
             
         </>
-        
     );
 }
 

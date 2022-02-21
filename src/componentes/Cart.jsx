@@ -19,7 +19,6 @@ export default function Cart() {
                 phone: '+54 91130001000',
                 email: 'diegodelavega@elzorro.com'
             },
-            //items: carrito.cartList,
             items: carrito.cartList.map( item => ( {
                 id: item.itemId,
                 price: item.itemPrecio,
@@ -29,10 +28,9 @@ export default function Cart() {
             total: carrito.calcTotalCart(),
             date: serverTimestamp()
         }
-        // console.log( order );
 
         createOrderInFirestore( order )
-            .then( result => alert( 'Tu orden ha sido creada con éxito. \n\nOrden ID: ' + result.id + '\n' ) )
+            .then( result => alert( 'Tu orden ha sido creada con éxito!!! \n\nOrden ID: ' + result.id + '\n' ) )
             .catch( error => console.log( error ) );
 
         carrito.cartList.forEach( async ( item ) => {
@@ -50,21 +48,31 @@ export default function Cart() {
         <Row>
             <div id="main-content">
                 <div className="div-content">
-                    <h5>TU CARRITO</h5>
+                    <h5>MI CARRITO</h5>
                 </div>
                 <div className="div-content">
                     <div className="d-flex row align-items-center">
                                         
                         <div className="d-flex justify-content-left col-6">
-                            <Link to='/'>
-                                <button type="button" className="btn btn-info text-dark">CONTINUAR COMPRANDO</button>
-                            </Link>
+                            {
+                                carrito.cartList.length > 0
+                                ? <Link to='/'><button type="button" className="btn btn-info text-dark">CONTINUAR COMPRANDO</button></Link>
+                                : <Link to='/'><button type="button" className="btn btn-info text-dark">VOLVER AL CATALOGO</button></Link>
+                            }
                         </div>
                         <div className="d-flex justify-content-end col-6">
                             {
                                 carrito.cartList.length > 0
-                                ? <button type="button" className="btn btn-danger" onClick={ carrito.clearCart }>ELEMINAR LOS PRODUCTOS</button>
-                                : <div className="div-content"><p><strong>¡ C A R R I T O &nbsp; V A C I O !</strong></p></div>
+                                && <button type="button" className="btn btn-danger" onClick={ carrito.clearCart }>ELIMINAR PRODUCTOS</button>
+                            }
+                        </div>
+                    </div>
+                    <div className="d-flex row align-items-center">
+                                        
+                        <div className="d-flex justify-content-center col-12">
+                            {
+                                carrito.cartList.length <= 0
+                                && <p><span className="carrito-vacio-texto">¡ T U &nbsp; C A R R I T O &nbsp; E  S T Á &nbsp; V A C I O !</span><br />Descubrí las categorías y elegí tus productos.</p>
                             }
                         </div>
                     </div>
