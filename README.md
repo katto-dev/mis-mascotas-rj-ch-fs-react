@@ -1,5 +1,5 @@
 # Mis Mascotas (eCommerce)
-![App Screenshot](https://res.cloudinary.com/katto-dev/image/upload/v1645409905/ecommerce/screenshot/screenshot-mis-mascotas-ecommerce_hikarz.png)
+![App Screenshot](https://res.cloudinary.com/katto-dev/image/upload/v1645410232/ecommerce/screenshot/screenshot-mis-mascotas-ecommerce_qcczzr.png)
 
 La aplicación consta de un catálogo de productos que permite ver el detalle de los productos, para luego poder seleccionar la cantidad de productos de acuerdo al stock disponible.
 
